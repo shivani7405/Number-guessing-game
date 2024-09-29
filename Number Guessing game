@@ -1,0 +1,178 @@
+#include<bits/stdc++.h>
+#include <ctime>
+#include<cstdlib>
+using namespace std;
+
+int main()
+{
+	cout<<"\n\t\t\t Wellcome to the Number Guessing game!!0\n\n\n\n"<<endl;
+	cout<<endl;
+	cout<<"Instructions"<<endl;
+	cout<<"You have to guess the number between 1 and 100"<<endl;
+	cout<<"You'll have limited lifelines depending upon the level of the game"<<endl;
+	cout<<"There are 3 levels of the game,"<<endl;
+	cout<<"Level 1: there will be 10 lifelines"<<endl;
+	cout<<"level 2: there will be 7 lifelines"<<endl;
+	cout<<"level 3: there will be 5 lifelines"<<endl;
+
+	cout<<endl;
+	cout<<"ALL THE VERY BEST"<<endl;
+	cout<<"START THE GAME-"<<endl;
+
+	while(true) 
+	{
+		cout<<"\nChoose the level of the game\n";
+		cout<<"1 for easy level\t";
+		cout<<"2 for medium level\t";
+		cout<<"3 for hard level\t";
+		cout<<"0 for ending the game\n" <<endl;
+
+		int difficulty_level;
+		cout<<"ENTER THE LEVEL"<<endl;
+		cin>>difficulty_level;
+
+		//srand(time(0));
+		int secretNumber = 10;
+		int playerChoice;
+
+		if(difficulty_level == 1)
+		{
+			cout<<"\nYou have 10 lifes"<<endl;
+
+			int left_choices = 10;
+			for(int i =1; i<= 10; i++)
+			{
+				cout<<"\n\nEnter the number: "<<endl;
+				cin>>playerChoice;
+
+
+				if(playerChoice == secretNumber) {
+					cout<<"Yayyy!! You guessed it right!, you won. "<< playerChoice<<" is the right answer"<<endl;
+					cout<<"Thanks for playing"<<endl;
+					break;
+				}
+				else 
+				{
+					cout<<"Nope," << playerChoice<< "is not he right answer"<<endl;
+					if(playerChoice > secretNumber) 
+					{
+						cout<<"The secret number is smaller then your choice."<<endl;
+					}
+
+					else
+					{
+						cout<<"The secret number is greater than your choice."<<endl;
+					}
+
+					left_choices--;
+					cout<<left_choices<< "choices left"<<endl;
+
+					if(left_choices == 0) 
+					{
+						cout<<"Oops!, no lifelines left.\n";
+						cout<<"You could'nt find the secret number, it was "<<secretNumber<<endl;
+						cout<<"You lose!!"<<endl;
+					}
+				}
+			}
+		}
+
+		else if(difficulty_level == 2)
+		{
+			cout<<"\nYou have 7 lifes"<<endl;
+
+			int left_choices = 7;
+			for(int i =1; i<= 7; i++)
+			{
+				cout<<"\n\nEnter the number: "<<endl;
+				cin>>playerChoice;
+
+
+				if(playerChoice == secretNumber)
+				{
+					cout<<"Yayyy!! You guessed it right!, you won. "<< playerChoice<<" is the right answer"<<endl;
+					cout<<"Thanks for playing"<<endl;
+					break;
+				}
+
+				else
+				{
+					cout<<"Nope," << playerChoice<< "is not he right answer"<<endl;
+					if(playerChoice > secretNumber)
+					{
+						cout<<"The secret number is smaller then your choice."<<endl;
+					}
+
+					else
+					{
+						cout<<"The secret number is greater than your choice."<<endl;
+					}
+				
+    				left_choices--;
+    				cout<<left_choices<< "choices left"<<endl;
+    				
+    				if(left_choices == 0)
+    			    {
+    				cout<<"Oops!, no lifelines left.\n";
+    				cout<<"You could'nt find the secret number, it was "<<secretNumber<<endl;
+    				cout<<"You lose!!"<<endl;
+    			    }
+    	    	}
+		    }
+	    }
+
+    	else if(difficulty_level == 3)
+    	{
+    		cout<<"\nYou have 5 lifes"<<endl;
+    
+    	    int left_choices = 5;
+    		for(int i=5; i<= 5; i++)
+    		{
+    			cout<<"\n\nEnter the number: "<<endl;
+    			cin>>playerChoice;
+    
+    
+    			if(playerChoice == secretNumber)
+    			{
+    				cout<<"Yayyy!! You guessed it right!, you won. "<< playerChoice<<" is the right answer"<<endl;
+    				cout<<"Thanks for playing"<<endl;
+    				break;
+    			}
+    			else 
+    			{
+    				cout<<"Nope," << playerChoice<< "is not he right answer"<<endl;
+    				if(playerChoice > secretNumber)
+    				{
+    					cout<<"The secret number is smaller then your choice."<<endl;
+    			    }
+
+    				else 
+    				{
+    					cout<<"The secret number is greater than your choice."<<endl;
+    				}
+    
+    				left_choices--;
+    				cout<<left_choices<< "choices left"<<endl;
+    
+    				if(left_choices == 0) 
+    				{
+    					cout<<"Oops!, no lifelines left.\n";
+    					    cout<<"You could'nt find the secret number, it was "<<secretNumber<<endl;
+    					cout<<"You lose!!"<<endl;
+    				}
+    			}
+    		}
+    	}
+
+        else if(difficulty_level == 0)
+        {
+        	exit(0);
+        }
+
+        else 
+        {
+	        cout<<"Wrong choice, Enter the valid level number to play the game (0, 1, 2, 3)"<<endl;
+        }
+        return 0;
+    }
+}
